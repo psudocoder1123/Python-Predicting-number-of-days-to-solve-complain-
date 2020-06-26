@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="C:\Users\Tanis\Desktop\pythonPro\static\css\style.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="employer" placeholder="Employer" required="required" />
+        <input type="text" name="min_pos_salary" placeholder="Min_pos_salary" required="required" />
+	<input type="text" name="max_pos_salary" placeholder="max_pos_salary" required="required" />
+	<input type="text" name="overtime_pay" placeholder="Overtime_pay" required="required" />
+	<input type="text" name="lump_sum_pay" placeholder="Lump_sum_pay" required="required" />
+	
+	<input type="text" name="other_pay" placeholder="other_pay" required="required" />
+	<input type="text" name="retirement_cost_covered" placeholder="retirement_cost_covered" required="required" />
+	<input type="text" name="health_benefits" placeholder="health_benefits" required="required" />
+	<input type="text" name="Month" placeholder="Month" required="required" />
+        <input type="text" name="year" placeholder="year" required="required" />	
+	
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
